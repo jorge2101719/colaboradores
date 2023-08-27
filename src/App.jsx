@@ -2,9 +2,9 @@ import { useState } from 'react'
 
 import { colaboradores } from './Colaboradores.js'
 
-// import Formulario from './components/Formulario'
+import Formulario from './components/Formulario'
 import Listado from './components/Listado'
-// import Alert from './components/Alert'
+import Alert from './components/Alert'
 // import Buscador from './components/Buscador'
 
 import './App.css'
@@ -33,7 +33,8 @@ function App() {
     <>
       <div>
         <Listado datos={datos} />
-        {/* <Formulario onClick={() => funcionPadreAHijo()} /> */}
+        <Formulario onSubmit={enviarFormulario} setAlert={setAlert} />
+        {alert.msg && <Alert color={alert.color}>{alert.msg}</Alert>}
         {/* <Buscador /> */}
         {/* <Alert /> */}
       </div>
