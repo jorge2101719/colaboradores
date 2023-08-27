@@ -1,27 +1,39 @@
 import { useState } from 'react'
-import  colaboradores  from './Colaboradores'
-import Formulario from './components/Formulario'
-import Listado from './components/Listado.jsx'
+
+import { colaboradores } from './Colaboradores.js'
+
+// import Formulario from './components/Formulario'
+import Listado from './components/Listado'
+// import Alert from './components/Alert'
+// import Buscador from './components/Buscador'
 
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+// 
 
 function App() {
   const [count, setCount] = useState(0)
   const [datos, setDatos] = useState(colaboradores)
-  console.log('objeto de datos ' + datos)
 
-  const mostrarDatos = () => {
-    console.log(datos)
+  const [alert, setAlert] = useState({error: '', msg: '', color:''})
+
+  console.log('valores del arreglo en App.jsx', datos)
+
+  const mostrarDatos = (dato) => {
+    console.log('mostrando código', dato)
+    setDatos([...datos, {id: id, nombre: nombre}])
   }
 
-  let lista = datos.map(dato => {dato.id})
-  console.log(lista)
+  // const data = 'documentos'
+
+
 
   return (
     <>
       <div>
-        <Listado {mostrarDatos} />
-        <Formulario />
+        <Listadp datos={datos} />
+        {/* <Formulario onClick={() => funcionPadreAHijo()} /> */}
         {/* <Buscador /> */}
         {/* <Alert /> */}
       </div>
