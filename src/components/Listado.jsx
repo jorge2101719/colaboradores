@@ -1,10 +1,10 @@
-import React from 'react'
 import Table from 'react-bootstrap/Table'
 
 const Listado = ({ datos }) => {
-  console.log('ahora estamos dentro del componente Listado')
+  // console.log('ahora estamos dentro del componente Listado')
   const listaDeDatos = datos.map((dato) => 
     <tr key={dato.id}>
+      {/* <td>{dato.id}</td> */}
       <td>{dato.nombre}</td>
       <td>{dato.correo}</td>
       <td>{dato.edad}</td>
@@ -16,9 +16,10 @@ const Listado = ({ datos }) => {
   return (
     <div>
       <h1>Listado</h1>
-      <Table>
+      <Table responsive striped bordered size='lg'>
         <thead>
           <tr>
+            {/* <th>Id</th> */}
             <th>Nombre</th>
             <th>Correo</th>
             <th>Edad</th>
@@ -26,7 +27,6 @@ const Listado = ({ datos }) => {
             <th>Telefono</th>
           </tr>
         </thead>
-        
         <tbody>
           {listaDeDatos}
         </tbody>
