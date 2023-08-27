@@ -18,27 +18,18 @@ function App() {
 
   const [alert, setAlert] = useState({error: '', msg: '', color:''})
 
-  console.log('mostrando datos en la consola ', datos)
+  console.log('mostrando datos en la consola desde App ')
 
-  const mostrarDatos = (dato) => {
-    console.log('mostrando código', dato)
-    setDatos([...datos, {nombre: dato.nombre}])
+  const enviarFormulario = (nombre) => {
+    console.log('estamos dentro de la función enviarFormulario')
+    setDatos([...datos, {nombre: nombre, correo: correo, edad: edad, cargo: cargo, telefono: telefono}])
   }
-
-  const enviarFormulario = ({nombre}) => {
-    console.log('estomao dentro de la función enviarFormulario')
-  }
-
-  // const data = 'documentos'
-
-
 
   return (
     <>
       <div>
         <Listado datos={datos} />
-        {/* <Formulario onSubmit={enviarFormulario} setAlert={setAlert} /> */}
-        <Formulario />
+        <Formulario onSubmit={enviarFormulario} setAlert={setAlert} />
         {alert.msg && <Alert color={alert.color}>{alert.msg}</Alert>}
         {/* <Buscador /> */}
         {/* <Alert /> */}

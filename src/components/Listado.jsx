@@ -18,12 +18,15 @@ const Listado = ({ datos }) => {
       <h1>Listado</h1>
       <Table>
         <thead>
-          <th>Nombre</th>
-          <th>Correo</th>
-          <th>Edad</th>
-          <th>Cargo</th>
-          <th>Telefono</th>
+          <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Edad</th>
+            <th>Cargo</th>
+            <th>Telefono</th>
+          </tr>
         </thead>
+        
         <tbody>
           {listaDeDatos}
         </tbody>

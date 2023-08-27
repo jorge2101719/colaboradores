@@ -3,19 +3,18 @@ import Button from 'react-bootstrap/Button'
 // import Form from 'react-bootstrap/Form'
 
 const Formulario = ({onSubmit, setAlert}) => {
-  const [dato, setDato] = useState('')
+  const [datos, setDatos] = useState('')
 
   const capturarInput = (e) => {
-    setDato(e.target.value)
+    console.log('función capturarInput se activa con onChange')
+    // setDatos(e.target.value)
   }
 
   const handlerSubmit = (e) => {
     e.preventDefault()
-    console.log('dentro del formulario', dato, typeof dato)
+    console.log('dentro del formulario', datos, typeof datos)
 
-    if (
-      dato === ''
-    ) {
+    if (datos.nombre === '') {
       setAlert({
         error: true,
         msg: 'Debe llenar todos los campos',
@@ -24,7 +23,7 @@ const Formulario = ({onSubmit, setAlert}) => {
       return
     }
 
-    onSubmit(dato)
+    onSubmit(datos)
 
     setAlert({
       error: false,
@@ -32,14 +31,18 @@ const Formulario = ({onSubmit, setAlert}) => {
       color: 'success'
     })
 
-    setDato('')
+    setDatos('')
   }
 
   return (
     <div>
       <h1>Formulario</h1>
       <form onSubmit={handlerSubmit}>
-        <input onChange={handlerSubmit} ></input>
+        <input onChange={capturarInput} name='nombre' placeholder='nombre'></input>
+        <input onChange={capturarInput}  name='correo' placeholder='correo'></input>
+        <input onChange={capturarInput}  name='edad' placeholder='edad'></input>
+        <input onChange={capturarInput}  name='cargo' placeholder='cargo'></input>
+        <input onChange={capturarInput}  name='telefono' placeholder='telefono'></input>
         <Button >Agregar</Button>
       </form>
     </div>
