@@ -25,6 +25,10 @@ function App() {
     setDatos([...datos, {nombre: dato.nombre}])
   }
 
+  const enviarFormulario = ({nombre}) => {
+    console.log('estomao dentro de la función enviarFormulario')
+  }
+
   // const data = 'documentos'
 
 
@@ -33,7 +37,8 @@ function App() {
     <>
       <div>
         <Listado datos={datos} />
-        <Formulario onSubmit={enviarFormulario} setAlert={setAlert} />
+        {/* <Formulario onSubmit={enviarFormulario} setAlert={setAlert} /> */}
+        <Formulario />
         {alert.msg && <Alert color={alert.color}>{alert.msg}</Alert>}
         {/* <Buscador /> */}
         {/* <Alert /> */}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+// import Form from 'react-bootstrap/Form'
 
 const Formulario = ({onSubmit, setAlert}) => {
   const [dato, setDato] = useState('')
@@ -37,19 +38,10 @@ const Formulario = ({onSubmit, setAlert}) => {
   return (
     <div>
       <h1>Formulario</h1>
-      <Form onSubmit={handlerSubmit}>
-        <Form.Group controlId="exampleFormControlTextarea1"></Form.Group>
-        <Form.Group controlId="nombre">
-          <Form.Control
-            type='text'
-            placeholder='Nombre'
-            name='nombre'
-            onChange={capturarInput}
-            value={dato}
-          ></Form.Control>
-        </Form.Group>
+      <form onSubmit={handlerSubmit}>
+        <input onChange={handlerSubmit} ></input>
         <Button >Agregar</Button>
-      </Form>
+      </form>
     </div>
   )
 }
