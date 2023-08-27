@@ -13,16 +13,16 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // 
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
   const [datos, setDatos] = useState(colaboradores)
 
   const [alert, setAlert] = useState({error: '', msg: '', color:''})
 
-  console.log('valores del arreglo en App.jsx', datos)
+  console.log('mostrando datos en la consola ', datos)
 
   const mostrarDatos = (dato) => {
     console.log('mostrando código', dato)
-    setDatos([...datos, {id: id, nombre: nombre}])
+    setDatos([...datos, {nombre: dato.nombre}])
   }
 
   // const data = 'documentos'
@@ -32,16 +32,16 @@ function App() {
   return (
     <>
       <div>
-        <Listadp datos={datos} />
+        <Listado datos={datos} />
         {/* <Formulario onClick={() => funcionPadreAHijo()} /> */}
         {/* <Buscador /> */}
         {/* <Alert /> */}
       </div>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
+      {/* <div className="card"> */}
+        {/* <button onClick={() => setCount((count) => count + 1)}> */}
+          {/* count is {count} */}
+        {/* </button> */}
+      {/* </div> */}
     </>
   )
 }

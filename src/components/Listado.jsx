@@ -1,10 +1,33 @@
 import React from 'react'
+import Table from 'react-bootstrap/Table'
 
-function Listado ({mostrarDatos}) {
+const Listado = ({ datos }) => {
+  console.log('ahora estamos dentro del componente Listado')
+  const listaDeDatos = datos.map((dato) => 
+    <tr key={dato.id}>
+      <td>{dato.nombre}</td>
+      <td>{dato.correo}</td>
+      <td>{dato.edad}</td>
+      <td>{dato.cargo}</td>
+      <td>{dato.telefono}</td>
+    </tr>
+  )
+
   return (
     <div>
-      Listado
-      {mostrarDatos}
+      <h1>Listado</h1>
+      <Table>
+        <thead>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Edad</th>
+          <th>Cargo</th>
+          <th>Telefono</th>
+        </thead>
+        <tbody>
+          {listaDeDatos}
+        </tbody>
+      </Table>
     </div>
   )
 }
