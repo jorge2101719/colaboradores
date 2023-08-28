@@ -5,7 +5,7 @@ import { colaboradores } from './Colaboradores.js'
 import Formulario from './components/Formulario'
 import Listado from './components/Listado'
 import Alert from './components/Alert'
-// import Buscador from './components/Buscador'
+import Buscador from './components/Buscador'
 
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -24,7 +24,7 @@ function App() {
   return (
     <>
       <div>
-        {/* <Buscador /> */}
+        <Buscador datos={baseDatos} />
         <Listado datos={baseDatos} />
 
         <Formulario  baseDatos={baseDatos} setBaseDatos={setBaseDatos} setAlert={setAlert} />

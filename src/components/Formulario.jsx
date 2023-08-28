@@ -8,7 +8,7 @@ const Formulario = ({ setBaseDatos, baseDatos, setAlert }) => {
   // const [baseDatos, setBaseDatos] = useState(colaboradores)
   // const [nombre, setNombre] = useState('')
   // const [correo, setCorreo] = useState('')
-  const [input, setInput] = useState({nombre: '', correo: ''})
+  const [input, setInput] = useState({nombre: '', correo: '', edad: '', cargo: '', telefono: ''})
 
   const capturarInput = (e) => {
     setInput({...input, [e.target.name]: e.target.value, [e.target.correo]: e.target.value, [e.target.edad]: e.target.value, [e.target.cargo]: e.target.value, [e.target.telefono]: e.target.value })
