@@ -17,7 +17,7 @@ const Formulario = ({ setBaseDatos, baseDatos, setAlert }) => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    if (e === '') {
+    if (e.target.name === '' || e.target.correo === '' || e.target.edad === '' || e.target.cargo === '' || e.target.telefono === '' ) {
       setAlert({
         error: true,
         msg: 'Se deben llenar todos los campos',
