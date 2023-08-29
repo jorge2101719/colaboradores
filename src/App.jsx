@@ -12,22 +12,29 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   const [baseDatos, setBaseDatos] = useState(colaboradores)
-
+  const [filtro, setFiltro] = useState('')
   const [alert, setAlert] = useState({error: '', msg: '', color:''})
 
-  // const enviarFormulario = (nombre, correo) => {
-    // let largo = baseDatos.length;
-    // largo++;
-    // setBaseDatos([...baseDatos, {id: largo, nombre: nombre, correo: correo }])
-  // }
+  const agregar = (nombre, correo, edad, cargo, telefono) => {
+    setBaseDatos([...baseDatos, { nombre: nombre, correo: correo, edad: edad, cargo: cargo, telefono: telefono }])
+  }
+
+  const filtrados = baseDatos.filter((col) => {
+    return (
+      col.nombre.toLowerCase().includes(filtro.toLowerCase()) ||
+      col.correo.toLowerCase().includes(filtro.toLowerCase()) ||
+      col.edad.toLowerCase().includes(filtro.toLowerCase()) ||
+      col.cargo.toLowerCase().includes(filtro.toLowerCase()) ||
+      col.telefono.toLowerCase().includes(filtro.toLowerCase())
+  )})
 
   return (
     <>
       <div>
-        <Buscador datos={baseDatos} />
-        <Listado datos={baseDatos} />
+        <Buscador setFiltro={setFiltro} />
+        <Listado datos={filtrados} />
 
-        <Formulario  baseDatos={baseDatos} setBaseDatos={setBaseDatos} setAlert={setAlert} />
+        <Formulario  agregar={agregar} setAlert={setAlert} />
         {alert.msg && <Alert color={alert.color}>{alert.msg} </Alert> }
       </div>
     </>

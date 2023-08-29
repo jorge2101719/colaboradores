@@ -4,19 +4,14 @@ import Button from 'react-bootstrap/Button'
 import { Form, Row } from 'react-bootstrap'
 // import Form from 'react-bootstrap/Form'
 
-const Formulario = ({ setBaseDatos, baseDatos, setAlert }) => {
-  // const [baseDatos, setBaseDatos] = useState(colaboradores)
+const Formulario = ({ agregar, setAlert }) => {
   const [nombre, setNombre] = useState('')
   const [correo, setCorreo] = useState('')
   const [edad, setEdad] = useState('')
   const [cargo, setCargo] = useState('')
   const [telefono, setTelefono] = useState('')
-  // const [input, setInput] = useState({nombre: '', correo: '', edad: '', cargo: '', telefono: ''})
-  // const capturarInput = (e) => {
-    // setInput({...input, [e.target.name]: e.target.value, [e.target.correo]: e.target.value, [e.target.edad]: e.target.value, [e.target.cargo]: e.target.value, [e.target.telefono]: e.target.value })
-  // }
 
-  const handleSubmit = (e) => {
+  const enviarDatos = (e) => {
     e.preventDefault()
 
     if (nombre === '' || correo === '' || edad === '' || cargo === '' || telefono === '' ) {
@@ -28,26 +23,27 @@ const Formulario = ({ setBaseDatos, baseDatos, setAlert }) => {
       return;
     }
 
-    setBaseDatos([...baseDatos, {nombre: nombre, correo: correo, edad: edad, cargo: cargo, telefono: telefono}])
-
-    setNombre('')
-    setCorreo('')
-    setEdad('')
-    setCargo('')
-    setTelefono('')
+    agregar(nombre, correo, edad, cargo, telefono)
 
     setAlert({
       error: false,
       msg: 'Información agregada',
       color: 'success'
     })
+    
+    setNombre('')
+    setCorreo('')
+    setEdad('')
+    setCargo('')
+    setTelefono('')
+
 
   }
 
   return (
     <div>
       <h1>Formulario</h1>
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form onSubmit={(e) => enviarDatos(e)}>
         <input onChange={(e) => setNombre(e.target.value)} name='nombre' key='nombre' placeholder='nombre'></input>
         <input onChange={(e) => setCorreo(e.target.value)} name='correo' key='correo' placeholder='correo'></input>
         <input onChange={(e) => setEdad(e.target.value)}  name='edad' placeholder='edad'></input>

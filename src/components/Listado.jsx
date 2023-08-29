@@ -2,17 +2,7 @@ import Table from 'react-bootstrap/Table'
 
 const Listado = ({ datos }) => {
   // console.log('ahora estamos dentro del componente Listado')
-  const listaDeDatos = datos.map((dato) => 
-    <tr key={dato.id}>
-      {/* <td>{dato.id}</td> */}
-      <td>{dato.nombre}</td>
-      <td>{dato.correo}</td>
-      <td>{dato.edad}</td>
-      <td>{dato.cargo}</td>
-      <td>{dato.telefono}</td>
-    </tr>
-  )
-
+  
   return (
     <div>
       <h1>Listado</h1>
@@ -28,7 +18,16 @@ const Listado = ({ datos }) => {
           </tr>
         </thead>
         <tbody>
-          {listaDeDatos}
+          {datos.map((dato) => 
+          <tr key={dato.id}>
+            {/* <td>{dato.id}</td> */}
+            <td>{dato.nombre}</td>
+            <td>{dato.correo}</td>
+            <td>{dato.edad}</td>
+            <td>{dato.cargo}</td>
+            <td>{dato.telefono}</td>
+          </tr>
+          )}
         </tbody>
       </Table>
     </div>
