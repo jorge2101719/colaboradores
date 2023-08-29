@@ -44,7 +44,7 @@ const Formulario = ({ agregar, setAlert }) => {
     <div>
       <h1>Formulario</h1>
 
-      <form onSubmit={(e) => enviarDatos(e)}>
+      <form className='formulario' onSubmit={(e) => enviarDatos(e)}>
 
         <div className='form-group'>
         <input
