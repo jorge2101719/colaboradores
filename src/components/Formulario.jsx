@@ -30,7 +30,7 @@ const Formulario = ({ agregar, setAlert }) => {
     setEdad('')
     setCargo('')
     setTelefono('')
-    setError(false)
+    // setError(false)
 
 
     setAlert({
@@ -46,6 +46,7 @@ const Formulario = ({ agregar, setAlert }) => {
 
       <form onSubmit={(e) => enviarDatos(e)}>
 
+        <div className='form-group'>
         <input
           className='form-control'
           type='text'
@@ -54,7 +55,9 @@ const Formulario = ({ agregar, setAlert }) => {
           onChange={(e) => setNombre(e.target.value)}
           value={nombre}
         />
-        
+        </div>
+
+        <div className='form-group'>
         <input
           className='form-control'
           type='email'
@@ -63,7 +66,9 @@ const Formulario = ({ agregar, setAlert }) => {
           onChange={(e) => setCorreo(e.target.value)}
           value={correo}
         />
-        
+        </div>
+
+        <div className='form-group'>
         <input
           className='form-control'
           type='number'
@@ -72,7 +77,9 @@ const Formulario = ({ agregar, setAlert }) => {
           onChange={(e) => setEdad(e.target.value)}
           value={edad}
         />
-        
+        </div>
+
+        <div className='form-group'>
         <input
           className='form-control'
           type='text'
@@ -81,7 +88,9 @@ const Formulario = ({ agregar, setAlert }) => {
           onChange={(e) => setCargo(e.target.value)}
           value={cargo}
         />
+        </div>
 
+        <div className='form-group'>
         <input
           className='form-control'
           type="tel"
@@ -90,6 +99,10 @@ const Formulario = ({ agregar, setAlert }) => {
           onChange={(e) => setTelefono(e.target.value)}
           value={telefono}
         />
+        </div>
+        
+        
+
 
         <Button type='submit' variant='primary' >Agregar</Button>
       </form>
