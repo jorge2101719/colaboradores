@@ -32,9 +32,13 @@ function App() {
     <>
       <div className='contenedor'>
         <Buscador setFiltro={setFiltro} />
-        <Listado datos={filtrados} />
 
-        <Formulario  agregar={agregar} setAlert={setAlert} />
+        <div className='m-5 subcontenedor'>
+          <Listado datos={filtrados} />
+
+          <Formulario  agregar={agregar} setAlert={setAlert} />
+        </div>
+        
         {alert.msg && <Alert color={alert.color}>{alert.msg} </Alert> }
       </div>
     </>

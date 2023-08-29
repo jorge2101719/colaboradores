@@ -42,7 +42,7 @@ const Formulario = ({ agregar, setAlert }) => {
 
   return (
     <div>
-      <h1>Formulario</h1>
+      <h3>Formulario</h3>
 
       <form className='formulario' onSubmit={(e) => enviarDatos(e)}>
 
@@ -73,6 +73,7 @@ const Formulario = ({ agregar, setAlert }) => {
           className='form-control'
           type='number'
           name='edad'
+          min='18'
           placeholder='edad'
           onChange={(e) => setEdad(e.target.value)}
           value={edad}

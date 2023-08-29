@@ -23,6 +23,11 @@
   flex-direction: column;
 }
 
+.subcontenedor {
+  display: flex;
+  gap: 20px;
+}
+
 .formulario {
   display: flex;
   flex-direction: column;
