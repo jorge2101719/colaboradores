@@ -9,7 +9,7 @@ const Listado = ({ datos }) => {
       <Table responsive striped bordered size='lg'>
         <thead>
           <tr>
-            {/* <th>Id</th> */}
+            <th>Id</th>
             <th>Nombre</th>
             <th>Correo</th>
             <th>Edad</th>
@@ -20,7 +20,7 @@ const Listado = ({ datos }) => {
         <tbody>
           {datos.map((dato) => 
           <tr key={dato.id}>
-            {/* <td>{dato.id}</td> */}
+            <td>{dato.id}</td>
             <td>{dato.nombre}</td>
             <td>{dato.correo}</td>
             <td>{dato.edad}</td>

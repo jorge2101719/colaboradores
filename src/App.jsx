@@ -15,8 +15,8 @@ function App() {
   const [filtro, setFiltro] = useState('')
   const [alert, setAlert] = useState({error: '', msg: '', color:''})
 
-  const agregar = (nombre, correo, edad, cargo, telefono) => {
-    setBaseDatos([...baseDatos, { nombre: nombre, correo: correo, edad: edad, cargo: cargo, telefono: telefono }])
+  const agregar = (id, nombre, correo, edad, cargo, telefono) => {
+    setBaseDatos([...baseDatos, {id: id, nombre: nombre, correo: correo, edad: edad, cargo: cargo, telefono: telefono }])
   }
 
   const filtrados = baseDatos.filter((col) => {

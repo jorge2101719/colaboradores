@@ -23,14 +23,17 @@ const Formulario = ({ agregar, setAlert }) => {
       return;
     }
 
-    agregar(nombre, correo, edad, cargo, telefono)
+    let id=3
+    id++
+
+    agregar(id, nombre, correo, edad, cargo, telefono)
 
     setAlert({
       error: false,
       msg: 'Información agregada',
       color: 'success'
     })
-    
+
     setNombre('')
     setCorreo('')
     setEdad('')
