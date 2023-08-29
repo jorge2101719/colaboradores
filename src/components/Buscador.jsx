@@ -2,9 +2,10 @@ const Buscador = ({ setFiltro }) => {
   return (
     <>
     <div className="container">
+    <h3>Buscador</h3>
     <input
         type="text"
-        placeholder="Buscando..."
+        placeholder="Buscador"
         onChange={(e) => setFiltro(e.target.value) }
       />
     </div>

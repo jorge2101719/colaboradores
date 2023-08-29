@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 // import { colaboradores } from '../Colaboradores'
-import { Form, Row } from 'react-bootstrap'
+// import { Form, Row } from 'react-bootstrap'
 // import Form from 'react-bootstrap/Form'
 
 const Formulario = ({ agregar, setAlert }) => {
@@ -10,10 +10,6 @@ const Formulario = ({ agregar, setAlert }) => {
   const [edad, setEdad] = useState('')
   const [cargo, setCargo] = useState('')
   const [telefono, setTelefono] = useState('')
-  const [error, setError] = useState(false)
-
-
-
 
   const enviarDatos = (e) => {
     e.preventDefault()
@@ -27,16 +23,14 @@ const Formulario = ({ agregar, setAlert }) => {
       return;
     }
 
-    let id=3
-    id++
-
-    agregar(id, nombre, correo, edad, cargo, telefono)
+    agregar(nombre, correo, edad, cargo, telefono)
 
     setNombre('')
     setCorreo('')
     setEdad('')
     setCargo('')
     setTelefono('')
+    setError(false)
 
 
     setAlert({
@@ -49,37 +43,47 @@ const Formulario = ({ agregar, setAlert }) => {
   return (
     <div>
       <h1>Formulario</h1>
+
       <form onSubmit={(e) => enviarDatos(e)}>
+
         <input
+          className='form-control'
           type='text'
           name='nombre'
           placeholder='nombre'
           onChange={(e) => setNombre(e.target.value)}
           value={nombre}
         />
+        
         <input
+          className='form-control'
           type='email'
           name='correo'
           placeholder='correo'
           onChange={(e) => setCorreo(e.target.value)}
           value={correo}
         />
+        
         <input
+          className='form-control'
           type='number'
           name='edad'
           placeholder='edad'
           onChange={(e) => setEdad(e.target.value)}
           value={edad}
         />
+        
         <input
-          
+          className='form-control'
           type='text'
           name='cargo'
           placeholder='cargo'
           onChange={(e) => setCargo(e.target.value)}
           value={cargo}
         />
+
         <input
+          className='form-control'
           type="tel"
           name='telefono'
           placeholder='telefono'
