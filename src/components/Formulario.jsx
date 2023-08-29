@@ -10,6 +10,10 @@ const Formulario = ({ agregar, setAlert }) => {
   const [edad, setEdad] = useState('')
   const [cargo, setCargo] = useState('')
   const [telefono, setTelefono] = useState('')
+  const [error, setError] = useState(false)
+
+
+
 
   const enviarDatos = (e) => {
     e.preventDefault()
@@ -28,12 +32,6 @@ const Formulario = ({ agregar, setAlert }) => {
 
     agregar(id, nombre, correo, edad, cargo, telefono)
 
-    setAlert({
-      error: false,
-      msg: 'Información agregada',
-      color: 'success'
-    })
-
     setNombre('')
     setCorreo('')
     setEdad('')
@@ -41,20 +39,57 @@ const Formulario = ({ agregar, setAlert }) => {
     setTelefono('')
 
 
+    setAlert({
+      error: false,
+      msg: 'Información agregada',
+      color: 'success'
+    })
   }
 
   return (
     <div>
       <h1>Formulario</h1>
       <form onSubmit={(e) => enviarDatos(e)}>
-        <input onChange={(e) => setNombre(e.target.value)} name='nombre' key='nombre' placeholder='nombre'></input>
-        <input onChange={(e) => setCorreo(e.target.value)} name='correo' key='correo' placeholder='correo'></input>
-        <input onChange={(e) => setEdad(e.target.value)}  name='edad' placeholder='edad'></input>
-        <input onChange={(e) => setCargo(e.target.value)}  name='cargo' placeholder='cargo'></input>
-        <input onChange={(e) => setTelefono(e.target.value)}  name='telefono' placeholder='telefono'></input>
+        <input
+          type='text'
+          name='nombre'
+          placeholder='nombre'
+          onChange={(e) => setNombre(e.target.value)}
+          value={nombre}
+        />
+        <input
+          type='email'
+          name='correo'
+          placeholder='correo'
+          onChange={(e) => setCorreo(e.target.value)}
+          value={correo}
+        />
+        <input
+          type='number'
+          name='edad'
+          placeholder='edad'
+          onChange={(e) => setEdad(e.target.value)}
+          value={edad}
+        />
+        <input
+          
+          type='text'
+          name='cargo'
+          placeholder='cargo'
+          onChange={(e) => setCargo(e.target.value)}
+          value={cargo}
+        />
+        <input
+          type="tel"
+          name='telefono'
+          placeholder='telefono'
+          onChange={(e) => setTelefono(e.target.value)}
+          value={telefono}
+        />
+
         <Button type='submit' variant='primary' >Agregar</Button>
       </form>
-
+    
     </div>
   )
 }
