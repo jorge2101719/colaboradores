@@ -21,17 +21,28 @@ const Formulario = ({ agregar, setAlert }) => {
         color: 'danger'
       })
       return;
+    } else if (edad < 18) {
+      setAlert({
+        error: true,
+        msg: 'Debes ser mayor de edad',
+        color: 'danger'
+      })
+      limpiarCampos()
+      return
     }
 
     agregar(nombre, correo, edad, cargo, telefono)
 
+    function limpiarCampos () {
     setNombre('')
     setCorreo('')
     setEdad('')
     setCargo('')
     setTelefono('')
     // setError(false)
+    }
 
+    limpiarCampos()
 
     setAlert({
       error: false,
@@ -73,7 +84,7 @@ const Formulario = ({ agregar, setAlert }) => {
           className='form-control'
           type='number'
           name='edad'
-          min='18'
+          // min='18'
           placeholder='edad'
           onChange={(e) => setEdad(e.target.value)}
           value={edad}
