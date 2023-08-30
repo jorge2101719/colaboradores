@@ -19,13 +19,13 @@ function App() {
     setBaseDatos([...baseDatos, {nombre: nombre, correo: correo, edad: edad, cargo: cargo, telefono: telefono }])
   }
 
-  const filtrados = baseDatos.filter((col) => {
+  const filtrados = baseDatos.filter((datoCol) => {
     return (
-      col.nombre.toLowerCase().includes(filtro.toLowerCase()) ||
-      col.correo.toLowerCase().includes(filtro.toLowerCase()) ||
-      col.edad.toLowerCase().includes(filtro.toLowerCase()) ||
-      col.cargo.toLowerCase().includes(filtro.toLowerCase()) ||
-      col.telefono.toLowerCase().includes(filtro.toLowerCase())
+      datoCol.nombre.toLowerCase().includes(filtro.toLowerCase()) ||
+      datoCol.correo.toLowerCase().includes(filtro.toLowerCase()) ||
+      datoCol.edad.toLowerCase().includes(filtro.toLowerCase()) ||
+      datoCol.cargo.toLowerCase().includes(filtro.toLowerCase()) ||
+      datoCol.telefono.toLowerCase().includes(filtro.toLowerCase())
   )})
 
   return (

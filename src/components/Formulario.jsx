@@ -35,7 +35,7 @@ const Formulario = ({ agregar, setAlert }) => {
 
     setAlert({
       error: false,
-      msg: 'Información agregada',
+      msg: `Información agregada exitosamente. Nombre: ${nombre}; Correo: ${correo}; Edad: ${edad}`,
       color: 'success'
     })
   }
@@ -101,9 +101,6 @@ const Formulario = ({ agregar, setAlert }) => {
           value={telefono}
         />
         </div>
-        
-        
-
 
         <Button type='submit' variant='primary' >Agregar</Button>
       </form>
